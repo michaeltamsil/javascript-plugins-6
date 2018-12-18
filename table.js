@@ -1,4 +1,13 @@
 $(function(){
+    $(document).on("click", '[name="edit"]',
+    function() {
+        const title = $(this).parents('tr').find('td[name="title"]');
+        const changeTitle = window.prompt('change title',title.text())
+        if (changeTitle){
+            title.text(changeTitle);
+        }
+    });
+
     $(document).on( "click", '[name="delete"]', function() {
         const areYouSure = window.confirm('are you sure want to delete this?');
         if (areYouSure){
